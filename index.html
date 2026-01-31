@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --accent:#2b7cff;
+      --muted:#666;
+      --bg:#e8efe6;
+      --card:#fff;
+      --radius:10px;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body { margin:0; background:var(--bg); color:#111; line-height:1.5; }
+    header { background:linear-gradient(135deg,#ffffffcc,var(--bg)); backdrop-filter:blur(6px); padding:18px 24px; position:sticky; top:0; z-index:10; box-shadow:0 1px 0 rgba(0,0,0,0.04);}
+    .container { max-width:1000px; margin:0 auto; padding:28px; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { font-weight:700; font-size:1.1rem; color:var(--accent); }
+    nav a { margin-left:14px; text-decoration:none; color:var(--muted); font-weight:6    nav a { margin-left:14lor:var(--accent); }
+    .hero { display:flex; gap:28px; align-items:center; padding:40px 0; }
+    .hero .text { flex:1; }
+    .hero h1 { margin:0 0 8px 0; font-size:2rem; }
+    .hero p { margin:0; color:var(--muted); }
+    .card { background:var(--card); padding:20px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(17,24,39,0.06); }
+    section { margin-top:20px; }
+    h2 { margin:0 0 12px 0; font-size:1.25rem; }
+    .skills { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .skill { padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid #eef3fb; }
+    .skill b { display:block; margin-bottom:8px; }
+    .meter { height:8px; background:#eef6ff; border-radius:6px; overflow:hidden; }
+    .meter > i { display:block; height:100%; background:linear-gradient(90deg,var(--accent),#5ad0ff); border-radius:6px 0 0 6px; }
+    footer { margin:36px 0 12px 0; text-align:center; color:var(--muted); font-size:0.9rem; }
+    @media (max-width:640px){ .hero{flex-direction:column;align-items:flex-start;} nav a{margin-left:8px;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Jessicca Angelov</div>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="text">
+        <h1>Welcome — I'm Jessicca Angelov</h1>
+        <p class="card">I build data-driven solutions and tell stories with data. I work with machine learning, statistics, and visualizations to turn raw data into actionable insights.</p>
+      </div>
+      <div style="min-width:220px;" class="card">
+        <p style="margin:0;"><strong>Current focus:</strong></p>
+        <p style="margin:6px 0 0 0;color:var(--muted)">Applied machine learning, model deployment, and data product design.</p>
+      </div>
+    </section>
+
+    <section id="about" class="card" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>I'm a data scientist with experience in cleaning and analyzing data, building predictive models, and communicating results to stakeholders. I enjoy end-to-end projects from data collection and feature engineering through modeling and deployment.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <b>Python</b>
+          <div class="meter" aria-hidden="true"><i style="width:95%"></i></div>
+        </div>
+        <div class="skill">
+          <b>Pandas & NumPy</b>
+          <div class="meter" aria-hidden="true"><i style="width:90%"></i></div>
+        </div>
+        <div class="skill">
+          <b>scikit-learn</b>
+          <div class="meter" aria-hidden="true"><i style="width:88%"></i></div>
+        </div>
+        <div class="skill">
+          <b>TensorFlow / PyTorch</b>
+          <div class="meter" aria-hidden="true"><i style="width:75%"></i></div>
+        </div>
+        <div class="skill">
+          <b>SQL & Databases</b>
+          <div class="meter" aria-hidden="true"><i style="width:85%"></i></div>
+        </div>
+        <div class="skill">
+          <b>Data Visualization</b>
+          <div class="meter" aria-hidden="true"><i style="width:90%"></i></div>
+        </div>
+        <div class="skill">
+          <b>Statistics & Experiment Design</b>
+          <div class="meter" aria-hidden="true"><i style="width:87%"></i></div>
+        </div>
+        <div class="skill">
+          <b>Model Deployment</b>
+          <div class="meter" aria-hidden="true"><i style="width:70%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:18px;">
+      <h2>Contact</h2>
+      <p style="margin:0;color:var(--muted)">Email: jessangelov@gmail.com — LinkedIn / GitHub links</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Jessicca Angelov
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
