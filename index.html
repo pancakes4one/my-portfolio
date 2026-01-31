@@ -6,18 +6,19 @@
   <title>My Portfolio</title>
   <style>
     :root {
-      --accent:#2b7cff;
-      --muted:#666;
-      --bg:#6B8F6A;
+      --main-green:#6B8F71;
+      --accent:#D6A77A;
+      --muted:#2E2A24;
+      --bg:#F4EFE6;
       --card:#fff;
       --radius:10px;
       font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    body { margin:0; background:var(--bg); color:#111; line-height:1.5; }
+    body { margin:0; background:var(--bg); color:var(--muted); line-height:1.5; }
     header { background:linear-gradient(135deg,#ffffffcc,var(--bg)); backdrop-filter:blur(6px); padding:18px 24px; position:sticky; top:0; z-index:10; box-shadow:0 1px 0 rgba(0,0,0,0.04);}
     .container { max-width:1000px; margin:0 auto; padding:28px; }
     .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-    .brand { font-weight:700; font-size:1.1rem; color:#000; }
+    .brand { font-weight:700; font-size:1.1rem; color:var(--muted); }
     nav a { margin-left:14px; text-decoration:none; color:var(--muted); font-weight:6    nav a { margin-left:14lor:var(--accent); }
     .hero { display:flex; gap:28px; align-items:center; padding:40px 0; }
     .hero .text { flex:1; }
@@ -30,7 +31,7 @@
     .skill { padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid #eef3fb; }
     .skill b { display:block; margin-bottom:8px; }
     .meter { height:8px; background:#eef6ff; border-radius:6px; overflow:hidden; }
-    .meter > i { display:block; height:100%; background:linear-gradient(90deg,var(--accent),#5ad0ff); border-radius:6px 0 0 6px; }
+    .meter > i { display:block; height:100%; background:linear-gradient(90deg,var(--main-green),var(--accent)); border-radius:6px 0 0 6px; }
     footer { margin:36px 0 12px 0; text-align:center; color:var(--muted); font-size:0.9rem; }
     @media (max-width:640px){ .hero{flex-direction:column;align-items:flex-start;} nav a{margin-left:8px;} }
   </style>
