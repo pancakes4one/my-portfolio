@@ -4,49 +4,218 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>My Portfolio</title>
+
   <style>
+    /* ------------------------------
+       Ghibli Earth-Tone Color System
+       ------------------------------ */
     :root {
-      --main-green: #6B8F71; /* Primary Green (Soft forest green) */
-      --secondary-green: #A3B18A; /* Secondary Green (Muted sage) */
-      --accent: #A3B18A;
-      --earth-brown: #936639; /* Earth Brown (Warm, grounded) */
-      --sky-blue: #A8DADC; /* Sky Blue (Gentle, airy) */
-      --bg: #F2E9D8; /* Soft Cream (Warm neutral background) */
-      --muted: #2F3E46; /* Deep Text Color (Charcoal with green undertone) */
-      --card: #fff;
-      --surface: #ffffff; /* explicit surface color for cards/content blocks */
-      --text-main: #2F3E46;
+      --main-green: #6B8F71;        /* Forest green */
+      --secondary-green: #A3B18A;   /* Sage */
+      --accent: #A8DADC;            /* Soft sky blue */
+      --earth-brown: #936639;       /* Warm brown */
+
+      --bg: #E7D9C3;                /* Slightly deeper cream for contrast */
+      --surface: #FFFFFF;           /* White card background */
+
+      --text-main: #2F3E46;         /* Deep charcoal-green */
+      --text-secondary: #4F5D57;
+
       --radius: 10px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    body { margin:0; background:var(--bg); color:var(--muted); line-height:1.5; }
-    header { background:linear-gradient(135deg,#ffffffcc,var(--bg)); backdrop-filter:blur(6px); padding:18px 24px; position:sticky; top:0; z-index:10; box-shadow:0 1px 0 rgba(0,0,0,0.04);}
-    .container { max-width:1000px; margin:0 auto; padding:28px; }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-    .brand { font-weight:700; font-size:1.1rem; color:var(--earth-brown); }
-    nav a { margin-left:14px; text-decoration:none; color:var(--main-green); font-weight:600; }
-    nav a:hover { color:var(--secondary-green); }
-    .hero { display:flex; gap:28px; align-items:center; padding:40px 0; }
-    .hero .text { flex:1; }
-    .hero h1 { margin:0 0 8px 0; font-size:2rem; }
-    .hero p { margin:0; color:var(--muted); }
-    .card { background:var(--card); padding:20px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(17,24,39,0.06); }
-    /* Ensure top-level sections sit on the white surface, not the page background */
-    main section { background:var(--surface); border-radius:var(--radius); padding:20px; box-shadow:0 6px 18px rgba(17,24,39,0.06); }
-    section { margin-top:20px; }
-    h2 { margin:0 0 12px 0; font-size:1.25rem; }
-    .skills { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
-    .skill { padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid #eef3fb; }
-    .skill b { display:block; margin-bottom:8px; }
-    .meter { height:8px; background:#eef6ff; border-radius:6px; overflow:hidden; }
-    .meter > i { display:block; height:100%; background:linear-gradient(90deg,var(--main-green),var(--accent)); border-radius:6px 0 0 6px; }
-    .btn { display:inline-block; padding:10px 14px; background:var(--main-green); color:#fff; border-radius:8px; text-decoration:none; font-weight:600; }
-    .links { margin-top:10px; }
-    .links a { margin-right:12px; color:var(--main-green); text-decoration:none; font-weight:600; }
-    footer { margin:36px 0 12px 0; text-align:center; color:var(--muted); font-size:0.9rem; }
-    @media (max-width:640px){ .hero{flex-direction:column;align-items:flex-start;} nav a{margin-left:8px;} }
+
+    /* ------------------------------
+       Header
+       ------------------------------ */
+    header {
+      background: linear-gradient(135deg, #ffffffcc, var(--bg));
+      backdrop-filter: blur(6px);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--earth-brown);
+    }
+
+    nav a {
+      margin-left: 14px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--main-green);
+    }
+
+    /* ------------------------------
+       Hero Section
+       ------------------------------ */
+    .hero {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      padding: 40px 32px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #f5f0e4, #d7e9df 40%, #cfe7f0 100%);
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+      color: var(--main-green);
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    /* ------------------------------
+       Card + Section Styling
+       ------------------------------ */
+    .card {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(17,24,39,0.06);
+    }
+
+    main section {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(17,24,39,0.06);
+      margin-top: 20px;
+    }
+
+    /* ------------------------------
+       Section Headers
+       ------------------------------ */
+    h2 {
+      margin: 0 0 12px 0;
+      font-size: 1.25rem;
+      color: var(--main-green);
+    }
+
+    /* ------------------------------
+       Skills Grid
+       ------------------------------ */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 12px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ffffff, #edf3ea);
+      border: 1px solid #d7e3d0;
+    }
+
+    .skill b {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .meter {
+      height: 8px;
+      background: #eef6ff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .meter > i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--main-green), var(--secondary-green));
+      border-radius: 6px 0 0 6px;
+    }
+
+    /* ------------------------------
+       Buttons + Links
+       ------------------------------ */
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      background: var(--main-green);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .btn:hover {
+      background: var(--secondary-green);
+    }
+
+    .links {
+      margin-top: 10px;
+    }
+
+    .links a {
+      margin-right: 12px;
+      color: var(--main-green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ------------------------------
+       Footer
+       ------------------------------ */
+    footer {
+      margin: 36px 0 12px 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* ------------------------------
+       Mobile
+       ------------------------------ */
+    @media (max-width: 640px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 8px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -61,64 +230,46 @@
   </header>
 
   <main class="container">
+
+    <!-- HERO -->
     <section id="home" class="hero">
       <div class="text">
         <h1>Welcome — I'm Jessicca Angelov</h1>
         <p class="card">I build data-driven solutions and tell stories with data. I work with machine learning, statistics, and visualizations to turn raw data into actionable insights.</p>
       </div>
+
       <div style="min-width:220px;" class="card">
         <p style="margin:0;"><strong>Current focus:</strong></p>
-        <p style="margin:6px 0 0 0;color:var(--muted)">Applied machine learning, model deployment, and data product design.</p>
+        <p style="margin:6px 0 0 0;color:var(--text-secondary)">Applied machine learning, model deployment, and data product design.</p>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="card" aria-labelledby="about-heading">
       <h2 id="about-heading">About Me</h2>
       <p>I'm a data scientist with experience in cleaning and analyzing data, building predictive models, and communicating results to stakeholders. I enjoy end-to-end projects from data collection and feature engineering through modeling and deployment.</p>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills">
-        <div class="skill">
-          <b>Python</b>
-          <div class="meter" aria-hidden="true"><i style="width:95%"></i></div>
-        </div>
-        <div class="skill">
-          <b>Pandas & NumPy</b>
-          <div class="meter" aria-hidden="true"><i style="width:90%"></i></div>
-        </div>
-        <div class="skill">
-          <b>scikit-learn</b>
-          <div class="meter" aria-hidden="true"><i style="width:88%"></i></div>
-        </div>
-        <div class="skill">
-          <b>TensorFlow / PyTorch</b>
-          <div class="meter" aria-hidden="true"><i style="width:75%"></i></div>
-        </div>
-        <div class="skill">
-          <b>SQL & Databases</b>
-          <div class="meter" aria-hidden="true"><i style="width:85%"></i></div>
-        </div>
-        <div class="skill">
-          <b>Data Visualization</b>
-          <div class="meter" aria-hidden="true"><i style="width:90%"></i></div>
-        </div>
-        <div class="skill">
-          <b>Statistics & Experiment Design</b>
-          <div class="meter" aria-hidden="true"><i style="width:87%"></i></div>
-        </div>
-        <div class="skill">
-          <b>Model Deployment</b>
-          <div class="meter" aria-hidden="true"><i style="width:70%"></i></div>
-        </div>
+        <div class="skill"><b>Python</b><div class="meter"><i style="width:95%"></i></div></div>
+        <div class="skill"><b>Pandas & NumPy</b><div class="meter"><i style="width:90%"></i></div></div>
+        <div class="skill"><b>scikit-learn</b><div class="meter"><i style="width:88%"></i></div></div>
+        <div class="skill"><b>TensorFlow / PyTorch</b><div class="meter"><i style="width:75%"></i></div></div>
+        <div class="skill"><b>SQL & Databases</b><div class="meter"><i style="width:85%"></i></div></div>
+        <div class="skill"><b>Data Visualization</b><div class="meter"><i style="width:90%"></i></div></div>
+        <div class="skill"><b>Statistics & Experiment Design</b><div class="meter"><i style="width:87%"></i></div></div>
+        <div class="skill"><b>Model Deployment</b><div class="meter"><i style="width:70%"></i></div></div>
       </div>
     </section>
 
-    <section id="contact" class="card" style="margin-top:18px;">
+    <!-- CONTACT -->
+    <section id="contact" class="card">
       <h2>Contact</h2>
-      <p style="margin:0;color:var(--muted)">Email: iamjessicca@gmail.com</p>
-      <div style="margin-top:12px;"> 
+      <p style="margin:0;color:var(--text-secondary)">Email: iamjessicca@gmail.com</p>
+      <div style="margin-top:12px;">
         <a class="btn" href="mailto:iamjessicca@gmail.com">Get in touch</a>
         <div class="links" style="display:inline-block">
           <a href="https://www.linkedin.com/in/jangelov/" target="_blank" rel="noopener">LinkedIn</a>
@@ -126,6 +277,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
