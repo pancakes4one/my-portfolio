@@ -6,20 +6,20 @@
   <title>My Portfolio</title>
 
   <style>
-      /* ------------------------------
-    Ghibli Earth-Tone (Darker, Natural)
+        /* ------------------------------
+    Deep, Muted, Natural Ghibli Palette
     ------------------------------ */
   :root {
-    --main-green: #4F6F52;        /* deeper forest green */
-    --secondary-green: #7A8F6C;   /* muted sage */
-    --accent: #8FBEC7;            /* dusty sky blue */
-    --earth-brown: #7C5A3E;       /* warm bark brown */
+    --main-green: #3F5E4A;        /* deep moss */
+    --secondary-green: #7C8F7A;   /* muted sage */
+    --accent: #6C8A84;            /* dusty teal */
+    --earth-brown: #6B4E3D;       /* bark brown */
 
-    --bg: #D8CBB6;                /* muted parchment */
-    --surface: #F4EFE6;           /* soft warm off-white */
+    --bg: #CFC6B8;                /* parchment */
+    --surface: #E8E3DA;           /* soft off-white */
 
-    --text-main: #2E3A32;         /* deep green-charcoal */
-    --text-secondary: #4F5A52;
+    --text-main: #2A332E;         /* deep charcoal-green */
+    --text-secondary: #4A544E;
 
     --radius: 10px;
   }
@@ -36,7 +36,7 @@
     Header
     ------------------------------ */
   header {
-    background: linear-gradient(135deg, #f4efe6cc, var(--bg));
+    background: linear-gradient(135deg, #e8e3dacc, var(--bg));
     backdrop-filter: blur(6px);
     padding: 18px 24px;
     position: sticky;
@@ -84,8 +84,8 @@
     align-items: center;
     padding: 40px 32px;
     border-radius: var(--radius);
-    background: linear-gradient(135deg, #e9e2d4, #cdd8cf 40%, #c3d4d8 100%);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, #dcd6c9, #b8c3b9 40%, #a7bdbb 100%);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
     margin-bottom: 24px;
   }
 
@@ -107,14 +107,14 @@
     background: var(--surface);
     padding: 20px;
     border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   }
 
   main section {
     background: var(--surface);
     border-radius: var(--radius);
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     margin-top: 20px;
   }
 
@@ -139,8 +139,8 @@
   .skill {
     padding: 12px;
     border-radius: 8px;
-    background: linear-gradient(180deg, #f4efe6, #e6e9e2);
-    border: 1px solid #d0d7cd;
+    background: linear-gradient(180deg, #e8e3da, #d6d9d2);
+    border: 1px solid #c3c9c1;
   }
 
   .skill b {
@@ -150,7 +150,7 @@
 
   .meter {
     height: 8px;
-    background: #dfe8e9;
+    background: #cfd8d6;
     border-radius: 6px;
     overflow: hidden;
   }
@@ -213,6 +213,7 @@
       margin-left: 8px;
     }
   }
+
   </style>
 </head>
 
