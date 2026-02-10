@@ -6,213 +6,213 @@
   <title>My Portfolio</title>
 
   <style>
-    /* ------------------------------
-       Ghibli Earth-Tone Color System
-       ------------------------------ */
-    :root {
-      --main-green: #6B8F71;        /* Forest green */
-      --secondary-green: #A3B18A;   /* Sage */
-      --accent: #A8DADC;            /* Soft sky blue */
-      --earth-brown: #936639;       /* Warm brown */
+      /* ------------------------------
+    Ghibli Earth-Tone (Darker, Natural)
+    ------------------------------ */
+  :root {
+    --main-green: #4F6F52;        /* deeper forest green */
+    --secondary-green: #7A8F6C;   /* muted sage */
+    --accent: #8FBEC7;            /* dusty sky blue */
+    --earth-brown: #7C5A3E;       /* warm bark brown */
 
-      --bg: #E7D9C3;                /* Slightly deeper cream for contrast */
-      --surface: #FFFFFF;           /* White card background */
+    --bg: #D8CBB6;                /* muted parchment */
+    --surface: #F4EFE6;           /* soft warm off-white */
 
-      --text-main: #2F3E46;         /* Deep charcoal-green */
-      --text-secondary: #4F5D57;
+    --text-main: #2E3A32;         /* deep green-charcoal */
+    --text-secondary: #4F5A52;
 
-      --radius: 10px;
-    }
+    --radius: 10px;
+  }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.5;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
 
-    /* ------------------------------
-       Header
-       ------------------------------ */
-    header {
-      background: linear-gradient(135deg, #ffffffcc, var(--bg));
-      backdrop-filter: blur(6px);
-      padding: 18px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-    }
+  /* ------------------------------
+    Header
+    ------------------------------ */
+  header {
+    background: linear-gradient(135deg, #f4efe6cc, var(--bg));
+    backdrop-filter: blur(6px);
+    padding: 18px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 28px;
-    }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px;
+  }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
 
-    .brand {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--earth-brown);
-    }
+  .brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--earth-brown);
+  }
 
-    nav a {
-      margin-left: 14px;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 600;
-    }
+  nav a {
+    margin-left: 14px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+  }
 
-    nav a:hover {
-      color: var(--main-green);
-    }
+  nav a:hover {
+    color: var(--main-green);
+  }
 
-    /* ------------------------------
-       Hero Section
-       ------------------------------ */
+  /* ------------------------------
+    Hero Section
+    ------------------------------ */
+  .hero {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    padding: 40px 32px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #e9e2d4, #cdd8cf 40%, #c3d4d8 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    color: var(--main-green);
+  }
+
+  .hero p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  /* ------------------------------
+    Cards + Sections
+    ------------------------------ */
+  .card {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  main section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    margin-top: 20px;
+  }
+
+  /* ------------------------------
+    Section Headers
+    ------------------------------ */
+  h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+    color: var(--main-green);
+  }
+
+  /* ------------------------------
+    Skills Grid
+    ------------------------------ */
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .skill {
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #f4efe6, #e6e9e2);
+    border: 1px solid #d0d7cd;
+  }
+
+  .skill b {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .meter {
+    height: 8px;
+    background: #dfe8e9;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .meter > i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-green), var(--secondary-green));
+    border-radius: 6px 0 0 6px;
+  }
+
+  /* ------------------------------
+    Buttons + Links
+    ------------------------------ */
+  .btn {
+    display: inline-block;
+    padding: 10px 14px;
+    background: var(--main-green);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+
+  .btn:hover {
+    background: var(--secondary-green);
+  }
+
+  .links {
+    margin-top: 10px;
+  }
+
+  .links a {
+    margin-right: 12px;
+    color: var(--main-green);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* ------------------------------
+    Footer
+    ------------------------------ */
+  footer {
+    margin: 36px 0 12px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  /* ------------------------------
+    Mobile
+    ------------------------------ */
+  @media (max-width: 640px) {
     .hero {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      padding: 40px 32px;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, #f5f0e4, #d7e9df 40%, #cfe7f0 100%);
-      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
-      margin-bottom: 24px;
+      flex-direction: column;
+      align-items: flex-start;
     }
-
-    .hero h1 {
-      margin: 0 0 8px 0;
-      font-size: 2rem;
-      color: var(--main-green);
+    nav a {
+      margin-left: 8px;
     }
-
-    .hero p {
-      margin: 0;
-      color: var(--text-secondary);
-    }
-
-    /* ------------------------------
-       Card + Section Styling
-       ------------------------------ */
-    .card {
-      background: var(--surface);
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(17,24,39,0.06);
-    }
-
-    main section {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: 0 6px 18px rgba(17,24,39,0.06);
-      margin-top: 20px;
-    }
-
-    /* ------------------------------
-       Section Headers
-       ------------------------------ */
-    h2 {
-      margin: 0 0 12px 0;
-      font-size: 1.25rem;
-      color: var(--main-green);
-    }
-
-    /* ------------------------------
-       Skills Grid
-       ------------------------------ */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-    }
-
-    .skill {
-      padding: 12px;
-      border-radius: 8px;
-      background: linear-gradient(180deg, #ffffff, #edf3ea);
-      border: 1px solid #d7e3d0;
-    }
-
-    .skill b {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .meter {
-      height: 8px;
-      background: #eef6ff;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .meter > i {
-      display: block;
-      height: 100%;
-      background: linear-gradient(90deg, var(--main-green), var(--secondary-green));
-      border-radius: 6px 0 0 6px;
-    }
-
-    /* ------------------------------
-       Buttons + Links
-       ------------------------------ */
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      background: var(--main-green);
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    }
-
-    .btn:hover {
-      background: var(--secondary-green);
-    }
-
-    .links {
-      margin-top: 10px;
-    }
-
-    .links a {
-      margin-right: 12px;
-      color: var(--main-green);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* ------------------------------
-       Footer
-       ------------------------------ */
-    footer {
-      margin: 36px 0 12px 0;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    /* ------------------------------
-       Mobile
-       ------------------------------ */
-    @media (max-width: 640px) {
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav a {
-        margin-left: 8px;
-      }
-    }
+  }
   </style>
 </head>
 
