@@ -1,319 +1,378 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jessicca Angelov — Portfolio</title>
 
-  <style>
-        /* ------------------------------
-    Deep, Muted, Natural Ghibli Palette
-    ------------------------------ */
-  :root {
-    --main-green: #3F5E4A;        /* deep moss */
-    --secondary-green: #7C8F7A;   /* muted sage */
-    --accent: #6C8A84;            /* dusty teal */
-    --earth-brown: #6B4E3D;       /* bark brown */
+<style>
 
-    --bg: #CFC6B8;                /* parchment */
-    --surface: #E8E3DA;           /* soft off-white */
+/* -----------------------------------
+   Dreamy Ghibli Watercolor Palette
+----------------------------------- */
+:root {
+  --bg-top: #c9d8e9;        /* soft periwinkle */
+  --bg-bottom: #9fbac7;     /* muted teal */
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --shadow: rgba(0, 0, 0, 0.15);
 
-    --text-main: #2A332E;         /* deep charcoal-green */
-    --text-secondary: #4A544E;
+  --primary: #6A6FBF;       /* periwinkle */
+  --primary-dark: #2F3354;  /* twilight */
+  --accent: #8A8EC4;        /* lavender */
 
-    --radius: 10px;
-  }
+  --text-main: #1F212A;
+  --text-soft: #4A4D5A;
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text-main);
-    line-height: 1.5;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
+  --radius: 18px;
+  --max-width: 820px;
+}
 
-  /* ------------------------------
-    Header
-    ------------------------------ */
-  header {
-    background: linear-gradient(135deg, #e8e3dacc, var(--bg));
-    backdrop-filter: blur(6px);
-    padding: 18px 24px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-  }
+/* -----------------------------------
+   Base
+----------------------------------- */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+}
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 28px;
-  }
+/* -----------------------------------
+   Layout
+----------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px;
+}
 
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
+/* -----------------------------------
+   Floating Card (Hero + Sections)
+----------------------------------- */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 40px auto;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 24px var(--shadow);
+}
 
-  .brand {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--earth-brown);
-  }
+/* -----------------------------------
+   Hero (Floating Profile Card)
+----------------------------------- */
+.hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  color: var(--primary-dark);
+}
 
-  nav a {
-    margin-left: 14px;
-    text-decoration: none;
-    color: var(--accent);
-    font-weight: 600;
-  }
+.hero p {
+  margin: 0;
+  color: var(--text-soft);
+}
 
-  nav a:hover {
-    color: var(--main-green);
-  }
+/* -----------------------------------
+   Section Headers
+----------------------------------- */
+h2 {
+  margin-top: 0;
+  color: var(--primary-dark);
+  font-size: 1.4rem;
+}
 
-  /* ------------------------------
-    Hero Section
-    ------------------------------ */
-  .hero {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    padding: 40px 32px;
-    border-radius: var(--radius);
-    background: linear-gradient(135deg, #dcd6c9, #b8c3b9 40%, #a7bdbb 100%);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
-    margin-bottom: 24px;
-  }
+/* -----------------------------------
+   Pill-Style Skills
+----------------------------------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  .hero h1 {
-    margin: 0 0 8px 0;
-    font-size: 2rem;
-    color: var(--main-green);
-  }
+.skill-pill {
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  box-shadow: 0 2px 6px var(--shadow);
+}
 
-  .hero p {
-    margin: 0;
-    color: var(--text-secondary);
-  }
+/* -----------------------------------
+   Strengths List
+----------------------------------- */
+.strengths-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  /* ------------------------------
-    Cards + Sections
-    ------------------------------ */
-  .card {
-    background: var(--surface);
-    padding: 20px;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  }
+.strengths-list li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+  color: var(--text-soft);
+}
 
-  main section {
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    margin-top: 20px;
-  }
+.strengths-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
 
-  /* ------------------------------
-    Section Headers
-    ------------------------------ */
-  h2 {
-    margin: 0 0 12px 0;
-    font-size: 1.25rem;
-    color: var(--main-green);
-  }
+/* -----------------------------------
+   Projects
+----------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
 
-  /* ------------------------------
-    Skills Grid
-    ------------------------------ */
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-  }
+.project-card {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px var(--shadow);
+}
 
-  .skill {
-    padding: 12px;
-    border-radius: 8px;
-    background: linear-gradient(180deg, #e8e3da, #d6d9d2);
-    border: 1px solid #c3c9c1;
-  }
+.project-card h3 {
+  margin-top: 0;
+  color: var(--primary-dark);
+}
 
-  .skill b {
-    display: block;
-    margin-bottom: 8px;
-  }
+.project-card p {
+  color: var(--text-soft);
+}
 
-  .meter {
-    height: 8px;
-    background: #cfd8d6;
-    border-radius: 6px;
-    overflow: hidden;
-  }
+/* -----------------------------------
+   Buttons
+----------------------------------- */
+.btn {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 3px 8px var(--shadow);
+}
 
-  .meter > i {
-    display: block;
-    height: 100%;
-    background: linear-gradient(90deg, var(--main-green), var(--secondary-green));
-    border-radius: 6px 0 0 6px;
-  }
+.btn:hover {
+  background: var(--primary);
+}
 
-  /* ------------------------------
-    Buttons + Links
-    ------------------------------ */
-  .btn {
-    display: inline-block;
-    padding: 10px 14px;
-    background: var(--main-green);
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  }
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-dark);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 3px 8px var(--shadow);
+  transition: background 0.2s ease;
+}
 
-  .btn:hover {
-    background: var(--secondary-green);
-  }
+.icon-btn:hover {
+  background: var(--primary);
+}
 
-  .links {
-    margin-top: 10px;
-  }
+.icon-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
 
-  .links a {
-    margin-right: 12px;
-    color: var(--main-green);
-    text-decoration: none;
-    font-weight: 600;
-  }
+/* Subtle hover animation for project cards */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-  /* ------------------------------
-    Footer
-    ------------------------------ */
-  footer {
-    margin: 36px 0 12px 0;
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-  }
 
-  /* ------------------------------
-    Mobile
-    ------------------------------ */
-  @media (max-width: 640px) {
-    .hero {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    nav a {
-      margin-left: 8px;
-    }
-  }
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(106, 111, 191, 0.25); /* periwinkle glow */
+}
 
-  </style>
+
+/* -----------------------------------
+   Footer
+----------------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Jessicca Angelov</div>
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<div class="container">
+
+  <!-- HERO (Floating Card Only) -->
+  <section class="card hero">
+    <h1>Hi, I'm Jessicca</h1>
+    <p>I build data-driven solutions and tell stories with data. I work with machine learning, statistics, and visualizations to turn raw data into actionable insights.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="card">
+    <h2>About Me</h2>
+    <p>I specialize in statistical analysis, machine learning, and data storytelling, with a focus on translating complex data into meaningful insights. Before transitioning into data, I worked in nonprofit program support and healthcare community services, where I learned how to analyze problems with empathy, clarity, and a mission-driven mindset.</p>
+
+    <p>I'm especially interested in using data to support social impact, population health, and human-centered AI. My strengths include structured documentation, thoughtful analysis, and translating complex findings into insights that help teams make ethical, evidence-based decisions.</p>
+  </section>
+
+  <!-- SKILLS (Pill Tags) -->
+  <section class="card">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-pill">Python</div>
+      <div class="skill-pill">Pandas</div>
+      <div class="skill-pill">NumPy</div>
+      <div class="skill-pill">scikit-learn</div>
+      <div class="skill-pill">TensorFlow</div>
+      <div class="skill-pill">PyTorch</div>
+      <div class="skill-pill">SQL</div>
+      <div class="skill-pill">Data Visualization</div>
+      <div class="skill-pill">Statistics</div>
+      <div class="skill-pill">Experiment Design</div>
+      <div class="skill-pill">Model Deployment</div>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
+  <!-- STRENGTHS -->
+  <section class="card">
+    <h2>What I Bring to a Team</h2>
+    <ul class="strengths-list">
+      <li>Mission‑driven analysis grounded in real community needs</li>
+      <li>Strong documentation and communication skills</li>
+      <li>Ability to evaluate models for fairness, accuracy, and real‑world impact</li>
+      <li>Experience translating technical results into actionable recommendations</li>
+      <li>A collaborative mindset shaped by nonprofit and healthcare work</li>
+      <li>A commitment to ethical, human‑centered AI practices</li>
+    </ul>
+  </section>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="text">
-        <h1>Welcome — I'm Jessicca Angelov</h1>
-        <p class="card">I build data-driven solutions and tell stories with data. I work with machine learning, statistics, and visualizations to turn raw data into actionable insights.</p>
-      </div>
+  <!-- PROJECTS -->
+<section class="card">
+  <h2>Projects</h2>
 
-      <div style="min-width:220px;" class="card">
-        <p style="margin:0;"><strong>Current focus:</strong></p>
-        <p style="margin:6px 0 0 0;color:var(--text-secondary)">Applied machine learning, model deployment, and data product design.</p>
-      </div>
-    </section>
+  <div class="projects-grid">
 
-    <!-- ABOUT -->
-    <section id="about" class="card" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Me</h2>
-      <p>I'm a data scientist with experience in cleaning and analyzing data, building predictive models, and communicating results to stakeholders. I enjoy end-to-end projects from data collection and feature engineering through modeling and deployment.</p>
-    </section>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>Television Ratings and User Engagement Analysis</h3>
+      <p>Analyzed IMDb data to test whether highly rated TV shows from the “Golden Age” also received the most votes, validating or disproving the initial assumption.</p>
+      <a class="btn" href="#" target="_blank">View Project</a>
+    </div>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="skill"><b>Python</b><div class="meter"><i style="width:95%"></i></div></div>
-        <div class="skill"><b>Pandas & NumPy</b><div class="meter"><i style="width:90%"></i></div></div>
-        <div class="skill"><b>scikit-learn</b><div class="meter"><i style="width:88%"></i></div></div>
-        <div class="skill"><b>TensorFlow / PyTorch</b><div class="meter"><i style="width:75%"></i></div></div>
-        <div class="skill"><b>SQL & Databases</b><div class="meter"><i style="width:85%"></i></div></div>
-        <div class="skill"><b>Data Visualization</b><div class="meter"><i style="width:90%"></i></div></div>
-        <div class="skill"><b>Statistics & Experiment Design</b><div class="meter"><i style="width:87%"></i></div></div>
-        <div class="skill"><b>Model Deployment</b><div class="meter"><i style="width:70%"></i></div></div>
-      </div>
-    </section>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Instacart Customer Behavior Insights</h3>
+      <p>Prepared a comprehensive report analyzing Instacart customer shopping habits to uncover patterns in ordering behavior and product demand.</p>
+      <a class="btn" href="#" target="_blank">View Project</a>
+    </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Plan Profitability Analysis</h3>
+      <p>Conducted a comparative revenue analysis of two prepaid telecom plans using customer usage data to determine which plan generated higher profitability.</p>
+      <a class="btn" href="#" target="_blank">View Project</a>
+    </div>
 
-      <div class="projects-grid">
+    <!-- Project 4 -->
+    <div class="project-card">
+      <h3>Cloud-Based Web Application Deployment</h3>
+      <p>Built and deployed a full web application to a cloud platform, implementing environment configuration, hosting, and deployment best practices.</p>
+      <a class="btn" href="#" target="_blank">View Project</a>
+    </div>
 
-        <div class="project-card">
-          <h3>Project Title One</h3>
-          <p>A short description of what this project does, what tools you used, or what problem it solves.</p>
-          <a class="btn" href="#" target="_blank">View Project</a>
-        </div>
+  </div>
+</section>
 
-        <div class="project-card">
-          <h3>Project Title Two</h3>
-          <p>A short description of the project. You can link to GitHub, a live demo, or a case study.</p>
-          <a class="btn" href="#" target="_blank">View Project</a>
-        </div>
+ <!-- CONTACT -->
+<section class="card">
+  <h2>Get in Touch</h2>
 
-        <div class="project-card">
-          <h3>Project Title Three</h3>
-          <p>Another project description. Keep it simple and consistent with the others.</p>
-          <a class="btn" href="#" target="_blank">View Project</a>
-        </div>
+  <div class="social-links" style="
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: center;
+  ">
 
-      </div>
-    </section>
+    <!-- Email Icon -->
+    <a class="icon-btn" href="mailto:iamjessicca@gmail.com">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 
+        2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+        4-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn Icon -->
+    <a class="icon-btn" href="https://www.linkedin.com/in/jangelov/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 
+        2.5 6S0 4.88 0 3.5 1.12 1 2.5 
+        1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 
+        0h3.8v2.2h.1c.5-1 1.7-2.2 
+        3.6-2.2 3.8 0 4.5 2.5 4.5 
+        5.8V24h-4v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 
+        2-2.9 4V24h-4V8z"/>
+      </svg>
+    </a>
+
+    <!-- GitHub Icon -->
+    <a class="icon-btn" href="https://github.com/pancakes4one" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 .5C5.65.5.5 5.65.5 
+        12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 
+        1.1.1 1.7 1.1 1.7 1.1 1 .1.6 1.8 2.6 
+        2.3.2-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.9 
+        0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 
+        0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 
+        0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 
+        3.1.8.9 1.2 2 1.2 3.3 0 4.6-2.7 5.6-5.3 
+        5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A10.9 
+        10.9 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+      </svg>
+    </a>
+
+  </div>
+</section>
 
 
-    <!-- CONTACT -->
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p style="margin:0;color:var(--text-secondary)">Email: iamjessicca@gmail.com</p>
-      <div style="margin-top:12px;">
-        <a class="btn" href="mailto:iamjessicca@gmail.com">Get in touch</a>
-        <div class="links" style="display:inline-block">
-          <a href="https://www.linkedin.com/in/jangelov/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/pancakes4one/pancakes4one" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </section>
 
-  </main>
+</div>
 
-  <footer>
-    © <span id="year"></span> Jessicca Angelov
-  </footer>
+<footer>
+  © <span id="year"></span> Jessicca Angelov
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
