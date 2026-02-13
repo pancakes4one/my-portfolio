@@ -34,11 +34,35 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
-  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
-  background-attachment: fixed;
+  background:
+  radial-gradient(
+    circle at 50% 20%,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0) 60%
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(218, 210, 255, 0.35) 0%,
+    rgba(201, 216, 233, 0.55) 25%,
+    rgba(159, 186, 199, 0.85) 70%,
+    rgba(140, 165, 180, 1) 100%
+  );
+background-attachment: fixed;
+
   color: var(--text-main);
   line-height: 1.6;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('images/background-watercolor-image.jpg') repeat;
+  opacity: 0.17; /* adjust between 0.05–0.18 */
+  pointer-events: none;
+  z-index: -1;
+}
+
 
 /* -----------------------------------
    Layout
