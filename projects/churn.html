@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Churn Case Study</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="case-hero">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Customer Churn Risk Modeling — Beta Bank</h1>
+      <p class="subtitle">Predicting customer attrition to support proactive retention strategy.</p>
+
+      <div class="meta">
+        <span class="chip">Python</span>
+        <span class="chip">pandas</span>
+        <span class="chip">scikit-learn</span>
+        <span class="chip">seaborn</span>
+        <span class="chip">EDA</span>
+        <span class="chip">Feature Engineering</span>
+        <span class="chip">Class Imbalance</span>
+        <span class="chip">Model Comparison</span>
+        <span class="chip">Cross-validation</span>
+        <span class="chip">Threshold Evaluation</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="https://github.com/...">View Code</a>
+        <a class="btn" href="#">View Demo</a>
+      </div>
+    </section>
+
+    <!-- 3-CARD GRID -->
+    <section class="case-grid">
+      <div class="card">
+        <h3>Overview</h3>
+        <p>Beta Bank is experiencing steady customer churn. Retaining customers is more cost-effective than acquiring new ones. This project develops and evaluates predictive models to identify customers at high risk of leaving, enabling targeted retention interventions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Business Problem</h3>
+        <ul class="checklist">
+          <li>Identify likely churners before account closure</li>
+          <li>Reduce revenue loss from attrition</li>
+          <li>Balance intervention cost against false positives</li>
+          <li>Select a model aligned with real business tradeoffs</li>
+        </ul>
+        <p><small><em>Note: Because churn is a minority class, accuracy alone can be misleading.</em></small></p>
+      </div>
+
+      <div class="card">
+        <h3>Why This Matters</h3>
+        <p>If churn risk is detected early, retention incentives can be targeted efficiently, high-value customers can be prioritized, and long-term customer lifetime value improves. This project focuses on decision-support metrics rather than simply maximizing accuracy.</p>
+      </div>
+    </section>
+
+    <!-- SECTIONS -->
+    <section class="case-section">
+      <h2>Data & Preparation</h2>
+      <ul class="checklist">
+        <li>Loaded and validated structured customer data (demographics, account behavior, tenure, balance)</li>
+        <li>Removed non-predictive identifiers (RowNumber, CustomerId, Surname)</li>
+        <li>Addressed missing values in Tenure</li>
+        <li>Encoded categorical features (Gender, Geography)</li>
+        <li>Performed EDA to understand churn distribution and class imbalance</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>Modeling Approach</h2>
+      <ul class="checklist">
+        <li>Baseline: Logistic Regression (interpretability)</li>
+        <li>Compared: Decision Tree, Random Forest</li>
+        <li>Used train/test split and cross-validation</li>
+        <li>Tuned hyperparameters</li>
+        <li>Evaluated using ROC-AUC and F1-score to reflect precision/recall tradeoffs</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>Results</h2>
+      <p>Rather than selecting a model based solely on accuracy, evaluation focused on metrics aligned with churn's class imbalance.</p>
+      <ul class="checklist">
+        <li>Compared Logistic Regression, Decision Tree, and Random Forest models</li>
+        <li>Evaluated performance using ROC-AUC and F1-score</li>
+        <li>Analyzed precision-recall tradeoffs</li>
+        <li>Reviewed threshold effects to balance missed churners vs unnecessary outreach</li>
+      </ul>
+      <p>Final model: improved F1 and ROC-AUC relative to baseline and produced churn risk probabilities that can be used to rank customers for retention outreach.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Business Interpretation</h2>
+      <p>Churn modeling is a cost-balancing exercise. False negatives (missed churners) risk lost revenue; false positives increase incentive spend. By evaluating tradeoffs instead of relying on a default cutoff, the model supports retention decisions aligned with financial priorities.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>What This Demonstrates</h2>
+      <ul class="checklist">
+        <li>End-to-end supervised learning workflow (EDA → modeling → evaluation → decision framing)</li>
+        <li>Handling imbalanced classification problems</li>
+        <li>Model comparison and evaluation discipline</li>
+        <li>Business-aligned metric selection</li>
+        <li>Clear communication of tradeoffs</li>
+      </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-footer">
+      <a href="../index.html">← Back to Projects</a>
+    </footer>
+
+  </div>
+
+</body>
+</html>
