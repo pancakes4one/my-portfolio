@@ -590,9 +590,14 @@
     }
 
     .reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.hidden {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .reveal.visible {
@@ -714,41 +719,42 @@
 
         <div class="project-card reveal">
           <div class="project-num">01</div>
-          <h3 class="project-title">Customer Churn Prediction</h3>
-          <p class="project-desc">Built a classification model to identify at-risk bank customers before they disengage. Cleaned and engineered features from behavioral and financial data, handled class imbalance, and evaluated models using F1 score and AUC-ROC — translating results into practical retention decision support.</p>
+          <h3 class="project-title">Customer Retention — Churn Prediction</h3>
+          <p class="project-desc">Organizations lose members, patients, and students before they ever ask for help. Built a classification model to identify who's at risk early — so teams can act before disengagement becomes departure. Addressed real-world class imbalance, optimized for precision-recall balance, and focused the output on decision support rather than model performance for its own sake.</p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">scikit-learn</span>
             <span class="project-tag">Classification</span>
             <span class="project-tag">Imbalanced Data</span>
-            <span class="project-tag">EDA</span>
+            <span class="project-tag">Feature Engineering</span>
           </div>
           <a href="https://github.com/pancakes4one/Data_Projects_TripleTen" class="project-link">View on GitHub →</a>
         </div>
 
         <div class="project-card reveal">
           <div class="project-num">02</div>
-          <h3 class="project-title">Taxi Demand Forecasting</h3>
-          <p class="project-desc">Cleaned and structured time-series data to forecast ride demand patterns. Built regression-based models evaluated by RMSE, and developed visualizations that communicate demand trends to support operational planning and driver allocation decisions.</p>
+          <h3 class="project-title">Taxi Service — Demand Forecasting Model</h3>
+          <p class="project-desc">When services are under-resourced, the people who depend on them most feel it first. Built a time-series forecasting model using historical demand patterns to anticipate peak usage periods — giving operations teams the information they need to plan staffing, allocate resources, and improve access before problems emerge. Hit an RMSE target of ≤ 48.</p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">pandas</span>
             <span class="project-tag">Time Series</span>
             <span class="project-tag">Regression</span>
-            <span class="project-tag">RMSE</span>
+            <span class="project-tag">Feature Engineering</span>
           </div>
           <a href="https://github.com/pancakes4one/Data_Projects_TripleTen" class="project-link">View on GitHub →</a>
         </div>
 
         <div class="project-card reveal">
           <div class="project-num">03</div>
-          <h3 class="project-title">Interactive Analytics Dashboard</h3>
-          <p class="project-desc">Built and deployed a cloud-hosted analytics dashboard for exploring vehicle listings through interactive filters and real-time visualizations. Includes a reproducible environment, deployment configuration, and a clean UI that makes data exploration accessible to non-technical users.</p>
+          <h3 class="project-title">Community Feedback Analysis — NLP Text Classification</h3>
+          <p class="project-desc">Most organizations collect more qualitative feedback than they can ever manually read. Built an NLP pipeline to classify and surface patterns from large volumes of unstructured text — turning open-ended responses into structured insight. Achieved F1 above 0.85 across multiple model approaches. Applicable anywhere teams need to understand what people are actually saying: surveys, program evaluations, community input.</p>
           <div class="project-tags">
-            <span class="project-tag">Streamlit</span>
-            <span class="project-tag">Plotly</span>
             <span class="project-tag">Python</span>
-            <span class="project-tag">Cloud Deployment</span>
+            <span class="project-tag">NLP</span>
+            <span class="project-tag">Text Classification</span>
+            <span class="project-tag">scikit-learn</span>
+            <span class="project-tag">Gradient Boosting</span>
           </div>
           <a href="https://github.com/pancakes4one/Data_Projects_TripleTen" class="project-link">View on GitHub →</a>
         </div>
@@ -850,13 +856,12 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-  </script>
-
-</body>
-</html>
+  
